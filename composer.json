@@ -1,0 +1,12 @@
+{
+    "name": "atomiomi/currency-converter",
+    "description": "Currency converter app",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ablay Keldibek",
+            "email": "atomio.ak@gmail.com"
+        }
+    ],
+    "require": {}
+}
