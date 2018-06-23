@@ -1,0 +1,5 @@
+# Dependency directory
+/vendor
+
+# MacOS bullshit
+.DS_Store
