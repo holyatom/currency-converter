@@ -1,12 +1,27 @@
 {
-    "name": "atomiomi/currency-converter",
-    "description": "Currency converter app",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Ablay Keldibek",
-            "email": "atomio.ak@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "currency-converter",
+  "description": "Currency converter app",
+  "type": "project",
+  "authors": [{
+    "name": "Abylay Keldibek",
+    "email": "atomio.ak@gmail.com"
+  }],
+  "scripts": {
+    "start": "php -S localhost:3000 -t public"
+  },
+  "config": {
+    "process-timeout": 0
+  },
+  "autoload": {
+    "psr-4": {
+      "Server\\": "server/"
+    }
+  },
+  "require": {
+    "php": ">=5.5.0",
+    "slim/slim": "3.10.0",
+    "slim/php-view": "2.2.0",
+    "guzzlehttp/guzzle": "6.3.3",
+    "respect/validation": "1.1.18"
+  }
 }
