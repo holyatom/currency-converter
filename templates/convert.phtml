@@ -2,9 +2,41 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Currency Converter</title>
+    <title>Result • Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css" />
+    <style media="screen">
+      html,
+      body {
+        height: 100%;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      body:before {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .c-container {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 800px;
+        width: 100%;
+        padding: 0 15px;
+        white-space: normal;
+        box-sizing: border-box;
+        text-align: left;
+      }
+    </style>
   </head>
   <body>
-    Convert
+    <div class="c-container uk-text-center">
+      <h1 class="uk-heading-primary">
+        <span class="uk-text-lead uk-text-muted"><? echo $amount . ' ' . $from ?> =</span> <? echo $result . ' ' . $to ?>
+      </h1>
+      <a href="/">Convert again</a>
+    </div>
   </body>
 </html>

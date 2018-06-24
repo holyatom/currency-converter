@@ -3,8 +3,74 @@
   <head>
     <meta charset="utf-8">
     <title>Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css" />
+    <style media="screen">
+      html,
+      body {
+        height: 100%;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      body:before {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .c-container {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 800px;
+        width: 100%;
+        padding: 0 15px;
+        white-space: normal;
+        box-sizing: border-box;
+        text-align: left;
+      }
+
+      .uk-margin {
+        margin-top: 0 !important;
+      }
+    </style>
   </head>
   <body>
-    Home
+    <div class="c-container">
+      <form action="/convert" method="get">
+        <div class="uk-grid uk-grid-small">
+          <div class="uk-width-2-5@m uk-margin">
+            <input
+              placeholder="100"
+              class="uk-input uk-form-large"
+              type="text" name="amount"
+              value="<? echo $_GET['amount'] ?>"
+            >
+          </div>
+          <div class="uk-width-1-5@m uk-margin">
+            <select class="uk-select uk-form-large" name="from">
+              <option value="GBP" <? if ($_GET['from'] == 'GBP') echo 'selected="selected"'; ?>>GBP</option>
+              <option value="JPY" <? if ($_GET['from'] == 'JPY') echo 'selected="selected"'; ?>>JPY</option>
+              <option value="USD" <? if ($_GET['from'] == 'USD') echo 'selected="selected"'; ?>>USD</option>
+            </select>
+          </div>
+          <div class="uk-width-1-5@m uk-margin">
+            <select class="uk-select uk-form-large" name="to">
+              <option value="GBP" <? if ($_GET['to'] == 'GBP') echo 'selected="selected"'; ?>>GBP</option>
+              <option value="JPY" <? if ($_GET['to'] == 'JPY') echo 'selected="selected"'; ?>>JPY</option>
+              <option value="USD" <? if ($_GET['to'] == 'USD') echo 'selected="selected"'; ?>>USD</option>
+            </select>
+          </div>
+          <div class="uk-width-1-5@m uk-margin">
+            <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" type="submit">
+              Convert
+            </button>
+          </div>
+        </div>
+        <? if (isset($error)): ?>
+          <span class="uk-text-danger"><? echo $error ?></span>
+        <? endif; ?>
+      </form>
+    </div>
   </body>
 </html>
