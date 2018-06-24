@@ -33,7 +33,7 @@ class ConvertController {
       'amount' => $params['amount'],
       'from' => $params['from'],
       'to' => $params['to'],
-      '$result' => $result->result,
+      'result' => $result->result,
     ];
 
     $this->renderer->render($res, 'convert.phtml', $data);
