@@ -25,8 +25,8 @@ class FixerConverter {
     ];
 
     try {
-      $response = (array) $this->client->get('/convert', $options)->getBody();
-      if ($response.error) return NULL;
+      $response = json_decode($this->client->get('/convert', $options)->getBody());
+      if ($response->error) return NULL;
       return $response;
     } catch (RequestException $err) {
       return NULL;

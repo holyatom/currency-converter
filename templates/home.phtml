@@ -43,21 +43,24 @@
             <input
               placeholder="100"
               class="uk-input uk-form-large"
-              type="text" name="amount"
+              type="number"
+              name="amount"
               value="<? echo $_GET['amount'] ?>"
+              required
+              min="1"
             >
           </div>
           <div class="uk-width-1-5@m uk-margin">
-            <select class="uk-select uk-form-large" name="from">
+            <select class="uk-select uk-form-large" name="from" required>
               <option value="GBP" <? if ($_GET['from'] == 'GBP') echo 'selected="selected"'; ?>>GBP</option>
-              <option value="JPY" <? if ($_GET['from'] == 'JPY') echo 'selected="selected"'; ?>>JPY</option>
+              <option value="EUR" <? if ($_GET['from'] == 'EUR') echo 'selected="selected"'; ?>>EUR</option>
               <option value="USD" <? if ($_GET['from'] == 'USD') echo 'selected="selected"'; ?>>USD</option>
             </select>
           </div>
           <div class="uk-width-1-5@m uk-margin">
-            <select class="uk-select uk-form-large" name="to">
+            <select class="uk-select uk-form-large" name="to" required>
               <option value="GBP" <? if ($_GET['to'] == 'GBP') echo 'selected="selected"'; ?>>GBP</option>
-              <option value="JPY" <? if ($_GET['to'] == 'JPY') echo 'selected="selected"'; ?>>JPY</option>
+              <option value="EUR" <? if ($_GET['to'] == 'EUR') echo 'selected="selected"'; ?>>EUR</option>
               <option value="USD" <? if ($_GET['to'] == 'USD') echo 'selected="selected"'; ?>>USD</option>
             </select>
           </div>
